@@ -1,8 +1,9 @@
 package com.example.lotspring.controller;
 
+import com.example.lotspring.common.ResponseVO;
 import com.example.lotspring.entity.User;
 import com.example.lotspring.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,22 +12,25 @@ import java.util.List;
 @RestController
 public class TestController {
 
-    @Autowired
     UserService userService;
 
+    public TestController(UserService userService) {
+        this.userService = userService;
+    }
+
     @RequestMapping("/hello")
-    public String test() {
-        return "hello world";
+    public ResponseVO<String> test() {
+        return ResponseVO.success("hello world");
     }
 
     @GetMapping("/getUserById")
-    public User getUserById(Integer id) {
-        return userService.getUserById(id);
+    public ResponseVO<User> getUserById(Integer id) {
+        return ResponseVO.success(userService.getUserById(id));
     }
 
     @PostMapping("/getUserList")
-    public List<User> getUserList(@RequestBody User user) {
-        return userService.getUserList(user);
+    public ResponseVO<List<User>> getUserList(@RequestBody @Validated  User user) {
+        return ResponseVO.success(userService.getUserList(user));
     }
 
 }

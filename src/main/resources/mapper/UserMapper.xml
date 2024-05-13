@@ -28,6 +28,9 @@
             <if test="id != null and id !='' ">
                 AND id = #{id}
             </if>
+            <if test="age != null and age !='' ">
+                AND age = #{age}
+            </if>
             <if test="sex != null and sex !='' ">
                 AND sex = #{sex}
             </if>
