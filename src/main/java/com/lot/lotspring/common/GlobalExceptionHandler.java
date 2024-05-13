@@ -1,4 +1,4 @@
-package com.example.lotspring.common;
+package com.lot.lotspring.common;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +33,7 @@ public class GlobalExceptionHandler {
 
             if (bizException.getCode() == null) {
 
-                bizException.setCode(ResponseStatus.BAD_REQUEST.getCode());
+                bizException.setCode(com.lot.lotspring.common.ResponseStatus.BAD_REQUEST.getCode());
             }
             return ResponseVO.failure(bizException.getCode(), bizException.getMessage());
         } else if (e instanceof MethodArgumentNotValidException methodArgumentNotValidException) {
@@ -48,31 +48,31 @@ public class GlobalExceptionHandler {
                 map.put(field, message);
             });
             log.error("数据校验出现错误：", e);
-            return ResponseVO.failure(ResponseStatus.BAD_REQUEST, map);
+            return ResponseVO.failure(com.lot.lotspring.common.ResponseStatus.BAD_REQUEST, map);
         } else if (e instanceof HttpRequestMethodNotSupportedException) {
 
             log.error("请求方法错误：", e);
-            return ResponseVO.failure(ResponseStatus.BAD_REQUEST.getCode(), "请求方法不正确");
+            return ResponseVO.failure(com.lot.lotspring.common.ResponseStatus.BAD_REQUEST.getCode(), "请求方法不正确");
         } else if (e instanceof MissingServletRequestParameterException ex) {
 
             log.error("请求参数缺失：", e);
-            return ResponseVO.failure(ResponseStatus.BAD_REQUEST.getCode(), "请求参数缺少: " + ex.getParameterName());
+            return ResponseVO.failure(com.lot.lotspring.common.ResponseStatus.BAD_REQUEST.getCode(), "请求参数缺少: " + ex.getParameterName());
         } else if (e instanceof MethodArgumentTypeMismatchException ex) {
 
             log.error("请求参数类型错误：", e);
-            return ResponseVO.failure(ResponseStatus.BAD_REQUEST.getCode(), "请求参数类型不正确：" + ex.getName());
+            return ResponseVO.failure(com.lot.lotspring.common.ResponseStatus.BAD_REQUEST.getCode(), "请求参数类型不正确：" + ex.getName());
         } else if (e instanceof NoHandlerFoundException ex) {
 
             log.error("请求地址不存在：", e);
-            return ResponseVO.failure(ResponseStatus.NOT_EXIST, ex.getRequestURL());
+            return ResponseVO.failure(com.lot.lotspring.common.ResponseStatus.NOT_EXIST, ex.getRequestURL());
         } else if (e instanceof AccessDeniedException ex) {
 
-            return ResponseVO.failure(ResponseStatus.UNAUTHORIZED, ex.getMessage());
+            return ResponseVO.failure(com.lot.lotspring.common.ResponseStatus.UNAUTHORIZED, ex.getMessage());
         } else {
 
             //如果是系统的异常，比如空指针这些异常
             log.error("【系统异常】", e);
-            return ResponseVO.failure(ResponseStatus.SYSTEM_ERROR.getCode(), ResponseStatus.SYSTEM_ERROR.getMessage());
+            return ResponseVO.failure(com.lot.lotspring.common.ResponseStatus.SYSTEM_ERROR.getCode(), com.lot.lotspring.common.ResponseStatus.SYSTEM_ERROR.getMessage());
         }
     }
 

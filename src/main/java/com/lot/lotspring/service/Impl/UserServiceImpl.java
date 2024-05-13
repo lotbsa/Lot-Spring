@@ -1,8 +1,8 @@
-package com.example.lotspring.service.Impl;
+package com.lot.lotspring.service.Impl;
 
-import com.example.lotspring.dao.UserDao;
-import com.example.lotspring.entity.User;
-import com.example.lotspring.service.UserService;
+import com.lot.lotspring.dao.UserDao;
+import com.lot.lotspring.entity.User;
+import com.lot.lotspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

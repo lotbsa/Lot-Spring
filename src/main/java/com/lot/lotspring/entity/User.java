@@ -1,4 +1,4 @@
-package com.example.lotspring.entity;
+package com.lot.lotspring.entity;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

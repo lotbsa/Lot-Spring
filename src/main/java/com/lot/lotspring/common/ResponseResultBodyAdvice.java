@@ -1,4 +1,4 @@
-package com.example.lotspring.common;
+package com.lot.lotspring.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.Resource;

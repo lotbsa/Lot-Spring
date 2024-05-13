@@ -1,4 +1,4 @@
-package com.example.lotspring;
+package com.lot.lotspring;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.junit.jupiter.api.Test;

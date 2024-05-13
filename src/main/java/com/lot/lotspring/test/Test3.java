@@ -1,4 +1,4 @@
-package com.example.lotspring.test;
+package com.lot.lotspring.test;
 
 
 import java.sql.*;

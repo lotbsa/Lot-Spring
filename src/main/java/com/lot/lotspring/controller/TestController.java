@@ -1,8 +1,8 @@
-package com.example.lotspring.controller;
+package com.lot.lotspring.controller;
 
-import com.example.lotspring.common.ResponseVO;
-import com.example.lotspring.entity.User;
-import com.example.lotspring.service.UserService;
+import com.lot.lotspring.common.ResponseVO;
+import com.lot.lotspring.entity.User;
+import com.lot.lotspring.service.UserService;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

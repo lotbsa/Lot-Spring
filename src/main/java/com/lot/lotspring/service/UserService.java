@@ -1,6 +1,6 @@
-package com.example.lotspring.service;
+package com.lot.lotspring.service;
 
-import com.example.lotspring.entity.User;
+import com.lot.lotspring.entity.User;
 
 import java.util.List;
 
